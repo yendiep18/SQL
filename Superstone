@@ -24,3 +24,34 @@ VALUES
     (13, 'Slow Cooker', 'Appliances', 49.95, 30, 4.7),
     (14, 'Cutlery Set', 'Kitchen Supplies', 34.50, 40, 4.4),
     (15, 'Cozy Throw Blanket', 'Furnishings', 24.99, 100, 4.2);
+
+SELECT item_name, price
+FROM superstore
+ORDER BY price desc;
+
+SELECT SUM(price)
+FROM superstore;
+
+SELECT AVG(price)
+FROM superstore;
+
+SELECT MIN(price)
+FROM superstore;
+
+SELECT MAX(price)
+FROM superstore;
+
+SELECT COUNT(price)
+FROM superstore;
+
+SELECT AVG(price), category
+FROM superstore
+WHERE category='Kitchen Supplies'
+GROUP BY category;
+
+SELECT SUM(stock_quantity), item_name
+FROM superstore
+WHERE item_name='Air Purifier'
+GROUP BY item_name;
+
+ 
