@@ -1,3 +1,4 @@
+#This project utilizes the Superstore Database to show a statistic about the data, and order them by their category.
 CREATE TABLE superstore (
     item_id INTEGER PRIMARY KEY,
     item_name TEXT,
@@ -25,13 +26,14 @@ VALUES
     (14, 'Cutlery Set', 'Kitchen Supplies', 34.50, 40, 4.4),
     (15, 'Cozy Throw Blanket', 'Furnishings', 24.99, 100, 4.2);
 
+#For this project, I used SQL to query the Superstore Database to get the statistical information about the item and price in a specific category.
+
+#Use a SELECT statement to order the items by price.
 SELECT item_name, price
 FROM superstore
 ORDER BY price desc;
 
-SELECT SUM(price)
-FROM superstore;
-
+#Show a statistic about the item prices.
 SELECT AVG(price)
 FROM superstore;
 
@@ -44,11 +46,13 @@ FROM superstore;
 SELECT COUNT(price)
 FROM superstore;
 
+##Show a statistic about the item prices by using SUM, AVERAGE, MINIMUM, MAXIMUM, and COUNT.
 SELECT AVG(price), category
 FROM superstore
 WHERE category='Kitchen Supplies'
 GROUP BY category;
 
+## Show a statistic about the prices for items in the category of “Kitchen Supplies” and the quantity in the category of “Air Purifier”.
 SELECT SUM(stock_quantity), item_name
 FROM superstore
 WHERE item_name='Air Purifier'
